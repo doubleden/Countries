@@ -5,4 +5,9 @@
 //  Created by Denis Denisov on 24/12/24.
 //
 
-import Foundation
+import Observation
+
+@Observable
+final class CountriesViewModel {
+    
+}

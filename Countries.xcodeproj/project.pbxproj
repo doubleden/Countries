@@ -8,19 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		05BDFE362D1B070500CE77AE /* CountriesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BDFE352D1B070500CE77AE /* CountriesApp.swift */; };
-		05BDFE382D1B070500CE77AE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BDFE372D1B070500CE77AE /* ContentView.swift */; };
-		05BDFE3A2D1B070500CE77AE /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BDFE392D1B070500CE77AE /* Item.swift */; };
 		05BDFE3C2D1B070600CE77AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05BDFE3B2D1B070600CE77AE /* Assets.xcassets */; };
 		05BDFE3F2D1B070600CE77AE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05BDFE3E2D1B070600CE77AE /* Preview Assets.xcassets */; };
+		05BDFE472D1B0EBE00CE77AE /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BDFE462D1B0EBE00CE77AE /* Country.swift */; };
+		05BDFE492D1B0EF800CE77AE /* CountriesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BDFE482D1B0EF800CE77AE /* CountriesListView.swift */; };
+		05BDFE4C2D1B0FFD00CE77AE /* CountriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BDFE4B2D1B0FFD00CE77AE /* CountriesViewModel.swift */; };
+		05BDFE4F2D1B10E000CE77AE /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BDFE4E2D1B10E000CE77AE /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		05BDFE322D1B070500CE77AE /* Countries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Countries.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05BDFE352D1B070500CE77AE /* CountriesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesApp.swift; sourceTree = "<group>"; };
-		05BDFE372D1B070500CE77AE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		05BDFE392D1B070500CE77AE /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		05BDFE3B2D1B070600CE77AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		05BDFE3E2D1B070600CE77AE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		05BDFE462D1B0EBE00CE77AE /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		05BDFE482D1B0EF800CE77AE /* CountriesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesListView.swift; sourceTree = "<group>"; };
+		05BDFE4B2D1B0FFD00CE77AE /* CountriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesViewModel.swift; sourceTree = "<group>"; };
+		05BDFE4E2D1B10E000CE77AE /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,8 +58,9 @@
 			isa = PBXGroup;
 			children = (
 				05BDFE352D1B070500CE77AE /* CountriesApp.swift */,
-				05BDFE372D1B070500CE77AE /* ContentView.swift */,
-				05BDFE392D1B070500CE77AE /* Item.swift */,
+				05BDFE4A2D1B0FE200CE77AE /* CountriesView */,
+				05BDFE452D1B0EB300CE77AE /* Models */,
+				05BDFE4D2D1B10D100CE77AE /* Services */,
 				05BDFE3B2D1B070600CE77AE /* Assets.xcassets */,
 				05BDFE3D2D1B070600CE77AE /* Preview Content */,
 			);
@@ -68,6 +73,31 @@
 				05BDFE3E2D1B070600CE77AE /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		05BDFE452D1B0EB300CE77AE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				05BDFE462D1B0EBE00CE77AE /* Country.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		05BDFE4A2D1B0FE200CE77AE /* CountriesView */ = {
+			isa = PBXGroup;
+			children = (
+				05BDFE482D1B0EF800CE77AE /* CountriesListView.swift */,
+				05BDFE4B2D1B0FFD00CE77AE /* CountriesViewModel.swift */,
+			);
+			path = CountriesView;
+			sourceTree = "<group>";
+		};
+		05BDFE4D2D1B10D100CE77AE /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				05BDFE4E2D1B10E000CE77AE /* NetworkManager.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,9 +170,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				05BDFE382D1B070500CE77AE /* ContentView.swift in Sources */,
-				05BDFE3A2D1B070500CE77AE /* Item.swift in Sources */,
+				05BDFE472D1B0EBE00CE77AE /* Country.swift in Sources */,
+				05BDFE492D1B0EF800CE77AE /* CountriesListView.swift in Sources */,
+				05BDFE4F2D1B10E000CE77AE /* NetworkManager.swift in Sources */,
 				05BDFE362D1B070500CE77AE /* CountriesApp.swift in Sources */,
+				05BDFE4C2D1B0FFD00CE77AE /* CountriesViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,9 +323,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = DenisDenisov.Countries;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -320,9 +356,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = DenisDenisov.Countries;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
