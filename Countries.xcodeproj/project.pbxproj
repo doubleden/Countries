@@ -7,24 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		058585542D1EFC2E003376D8 /* restcountries in Frameworks */ = {isa = PBXBuildFile; productRef = 058585532D1EFC2E003376D8 /* restcountries */; };
+		059366B82D1F004C00FF3309 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 059366B72D1F004C00FF3309 /* Kingfisher */; };
+		059366BA2D1F00CC00FF3309 /* ScreenSizeEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059366B92D1F00CC00FF3309 /* ScreenSizeEnvironment.swift */; };
 		05BDFE362D1B070500CE77AE /* CountriesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BDFE352D1B070500CE77AE /* CountriesApp.swift */; };
 		05BDFE3C2D1B070600CE77AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05BDFE3B2D1B070600CE77AE /* Assets.xcassets */; };
 		05BDFE3F2D1B070600CE77AE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05BDFE3E2D1B070600CE77AE /* Preview Assets.xcassets */; };
-		05BDFE472D1B0EBE00CE77AE /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BDFE462D1B0EBE00CE77AE /* Country.swift */; };
 		05BDFE492D1B0EF800CE77AE /* CountriesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BDFE482D1B0EF800CE77AE /* CountriesListView.swift */; };
 		05BDFE4C2D1B0FFD00CE77AE /* CountriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BDFE4B2D1B0FFD00CE77AE /* CountriesViewModel.swift */; };
 		05BDFE4F2D1B10E000CE77AE /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BDFE4E2D1B10E000CE77AE /* NetworkManager.swift */; };
+		05F14D9C2D1F5E2A00EFBD89 /* CountryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F14D9B2D1F5E2A00EFBD89 /* CountryDetailView.swift */; };
+		05F14D9E2D1F6D1600EFBD89 /* AnnotationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F14D9D2D1F6D1600EFBD89 /* AnnotationItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		058585502D1EF873003376D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		058585522D1EFBD3003376D8 /* restcountries */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = restcountries; path = Countries/restcountries; sourceTree = SOURCE_ROOT; };
+		059366B92D1F00CC00FF3309 /* ScreenSizeEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenSizeEnvironment.swift; sourceTree = "<group>"; };
 		05BDFE322D1B070500CE77AE /* Countries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Countries.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05BDFE352D1B070500CE77AE /* CountriesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesApp.swift; sourceTree = "<group>"; };
 		05BDFE3B2D1B070600CE77AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		05BDFE3E2D1B070600CE77AE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		05BDFE462D1B0EBE00CE77AE /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		05BDFE482D1B0EF800CE77AE /* CountriesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesListView.swift; sourceTree = "<group>"; };
 		05BDFE4B2D1B0FFD00CE77AE /* CountriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesViewModel.swift; sourceTree = "<group>"; };
 		05BDFE4E2D1B10E000CE77AE /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		05F14D9B2D1F5E2A00EFBD89 /* CountryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailView.swift; sourceTree = "<group>"; };
+		05F14D9D2D1F6D1600EFBD89 /* AnnotationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,17 +40,45 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				059366B82D1F004C00FF3309 /* Kingfisher in Frameworks */,
+				058585542D1EFC2E003376D8 /* restcountries in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		058585512D1EF880003376D8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		058585552D1EFD9E003376D8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				05F14D9D2D1F6D1600EFBD89 /* AnnotationItem.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		059366B52D1EFFD900FF3309 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				05BDFE352D1B070500CE77AE /* CountriesApp.swift */,
+				058585502D1EF873003376D8 /* Info.plist */,
+				059366B92D1F00CC00FF3309 /* ScreenSizeEnvironment.swift */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
 		05BDFE292D1B070500CE77AE = {
 			isa = PBXGroup;
 			children = (
 				05BDFE342D1B070500CE77AE /* Countries */,
 				05BDFE332D1B070500CE77AE /* Products */,
+				058585512D1EF880003376D8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,10 +93,11 @@
 		05BDFE342D1B070500CE77AE /* Countries */ = {
 			isa = PBXGroup;
 			children = (
-				05BDFE352D1B070500CE77AE /* CountriesApp.swift */,
+				059366B52D1EFFD900FF3309 /* Configuration */,
 				05BDFE4A2D1B0FE200CE77AE /* CountriesView */,
-				05BDFE452D1B0EB300CE77AE /* Models */,
 				05BDFE4D2D1B10D100CE77AE /* Services */,
+				058585552D1EFD9E003376D8 /* Models */,
+				058585522D1EFBD3003376D8 /* restcountries */,
 				05BDFE3B2D1B070600CE77AE /* Assets.xcassets */,
 				05BDFE3D2D1B070600CE77AE /* Preview Content */,
 			);
@@ -75,18 +112,11 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		05BDFE452D1B0EB300CE77AE /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				05BDFE462D1B0EBE00CE77AE /* Country.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		05BDFE4A2D1B0FE200CE77AE /* CountriesView */ = {
 			isa = PBXGroup;
 			children = (
 				05BDFE482D1B0EF800CE77AE /* CountriesListView.swift */,
+				05F14D9B2D1F5E2A00EFBD89 /* CountryDetailView.swift */,
 				05BDFE4B2D1B0FFD00CE77AE /* CountriesViewModel.swift */,
 			);
 			path = CountriesView;
@@ -116,6 +146,10 @@
 			dependencies = (
 			);
 			name = Countries;
+			packageProductDependencies = (
+				058585532D1EFC2E003376D8 /* restcountries */,
+				059366B72D1F004C00FF3309 /* Kingfisher */,
+			);
 			productName = Countries;
 			productReference = 05BDFE322D1B070500CE77AE /* Countries.app */;
 			productType = "com.apple.product-type.application";
@@ -144,6 +178,9 @@
 				Base,
 			);
 			mainGroup = 05BDFE292D1B070500CE77AE;
+			packageReferences = (
+				059366B62D1F004C00FF3309 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 05BDFE332D1B070500CE77AE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -170,7 +207,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				05BDFE472D1B0EBE00CE77AE /* Country.swift in Sources */,
+				05F14D9C2D1F5E2A00EFBD89 /* CountryDetailView.swift in Sources */,
+				05F14D9E2D1F6D1600EFBD89 /* AnnotationItem.swift in Sources */,
+				059366BA2D1F00CC00FF3309 /* ScreenSizeEnvironment.swift in Sources */,
 				05BDFE492D1B0EF800CE77AE /* CountriesListView.swift in Sources */,
 				05BDFE4F2D1B10E000CE77AE /* NetworkManager.swift in Sources */,
 				05BDFE362D1B070500CE77AE /* CountriesApp.swift in Sources */,
@@ -311,6 +350,7 @@
 				DEVELOPMENT_TEAM = AM64M5A8BU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Countries/Configuration/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -344,6 +384,7 @@
 				DEVELOPMENT_TEAM = AM64M5A8BU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Countries/Configuration/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -388,6 +429,29 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		059366B62D1F004C00FF3309 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.1.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		058585532D1EFC2E003376D8 /* restcountries */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = restcountries;
+		};
+		059366B72D1F004C00FF3309 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 059366B62D1F004C00FF3309 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 05BDFE2A2D1B070500CE77AE /* Project object */;
 }

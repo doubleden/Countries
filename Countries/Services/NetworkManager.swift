@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import restcountries
 
 enum NetworkError: Error {
     case noData
@@ -32,7 +33,7 @@ final class NetworkManager {
     
     private init() {}
     
-    func fetchExercise() async throws -> [Country] {
+    func fetchData() async throws -> [Country] {
         guard let url = URL(string: "https://restcountries.com/v3.1/all") else {
             throw NetworkError.invalidURL
         }
@@ -45,6 +46,8 @@ final class NetworkManager {
         
         let decoder = JSONDecoder()
         do {
+            let jsonString = String(data: data, encoding: .utf8)
+                print("JSON Response: \(jsonString ?? "No Data")")
             return try decoder.decode([Country].self, from: data)
         } catch {
             throw NetworkError.decodingError

@@ -1,0 +1,145 @@
+openapi: 3.0.0
+info:
+  title: RestCountries API
+  description: API для получения информации о странах.
+  version: 1.0.0
+servers:
+  - url: https://restcountries.com/v3.1
+    description: Основной сервер
+
+paths:
+  /all:
+    get:
+      summary: Получить информацию обо всех странах
+      operationId: getAllCountries
+      responses:
+        '200':
+          description: Список всех стран
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Country'
+        '400':
+          description: Неверный запрос
+        '500':
+          description: Внутренняя ошибка сервера
+
+components:
+  schemas:
+    Country:
+      type: object
+      properties:
+        name:
+          type: object
+          properties:
+            common:
+              type: string
+              description: Общепринятое название страны.
+            official:
+              type: string
+              description: Официальное название страны.
+            nativeName:
+              type: object
+              additionalProperties:
+                type: object
+                properties:
+                  official:
+                    type: string
+                  common:
+                    type: string
+        tld:
+          type: array
+          items:
+            type: string
+          description: Список доменов верхнего уровня для страны.
+        cca2:
+          type: string
+          description: Двухбуквенный код страны.
+        ccn3:
+          type: string
+          description: Трехзначный код страны.
+        cca3:
+          type: string
+          description: Трехбуквенный код страны.
+        cioc:
+          type: string
+          description: Код страны для спортивных мероприятий.
+        independent:
+          type: boolean
+          description: Статус независимости.
+        status:
+          type: string
+          description: Статус страны.
+        unMember:
+          type: boolean
+          description: Членство в ООН.
+        currencies:
+          type: object
+          additionalProperties:
+            type: object
+            properties:
+              name:
+                type: string
+              symbol:
+                type: string
+        capital:
+          type: array
+          items:
+            type: string
+          description: Столица страны.
+        region:
+          type: string
+          description: Регион.
+        subregion:
+          type: string
+          description: Субрегион.
+        languages:
+          type: object
+          additionalProperties:
+            type: string
+        borders:
+          type: array
+          items:
+            type: string
+          description: Список стран, граничащих с данной страной.
+        population:
+          type: integer
+          description: Население страны.
+        flags:
+          type: object
+          properties:
+            png:
+              type: string
+              description: URL флага в формате PNG.
+            svg:
+              type: string
+              description: URL флага в формате SVG.
+        demonyms:
+          type: object
+          additionalProperties:
+            type: object
+            properties:
+              f:
+                type: string
+              m:
+                type: string
+        area:
+          type: number
+          description: Площадь страны в квадратных километрах.
+        gini:
+          type: object
+          additionalProperties:
+            type: number
+          description: Индекс Джини за конкретный год.
+        timezones:
+          type: array
+          items:
+            type: string
+          description: Список часовых поясов.
+        continents:
+          type: array
+          items:
+            type: string
+          description: Континенты, к которым относится страна.

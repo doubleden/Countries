@@ -12,7 +12,10 @@ import SwiftData
 struct CountriesApp: App {
     var body: some Scene {
         WindowGroup {
-            CountriesListView()
+            NavigationStack {
+                CountriesListView()
+                    .environment(\.screenSize, UIScreen.main.bounds.size)
+            }
         }
     }
 }
