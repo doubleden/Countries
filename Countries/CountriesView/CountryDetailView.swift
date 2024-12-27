@@ -63,6 +63,12 @@ struct CountryDetailView: View {
                         text: country.timezones?.first ?? "N/A"
                     )
                     
+                    ShareLink(
+                        item: country.flags?.png ?? "",
+                        preview: SharePreview(country.name?.official ?? "", image: Image(systemName: "link"))
+                    )
+                    .padding()
+                    
                     if let lat = country.latlng?[0], let lng = country.latlng?[1] {
                         MapView(
                             coordinate: CLLocationCoordinate2D(latitude: lat, longitude: lng),
