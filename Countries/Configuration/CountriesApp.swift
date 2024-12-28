@@ -16,6 +16,7 @@ struct CountriesApp: App {
                 CountriesListView()
                     .environment(\.screenSize, UIScreen.main.bounds.size)
             }
+            .modelContainer(for: [CountryStorage.self])
         }
     }
 }

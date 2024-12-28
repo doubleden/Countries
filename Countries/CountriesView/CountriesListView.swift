@@ -6,23 +6,25 @@
 //
 
 import SwiftUI
-import Kingfisher
 import restcountries
+import SwiftData
 
 struct CountriesListView: View {
+    
+    @Query var countries: [CountryStorage]
     @State private var countriesVM = CountriesViewModel()
+    
     @Environment(\.screenSize) private var screenSize
+    @Environment(\.modelContext) private var modelContext
     
     @State private var searchText = ""
     
-    var filteredItems: [Country] {
+    @AppStorage("firstLaunch") private var isFirstLaunch = true
+    
+    var filteredItems: [CountryStorage] {
         searchText.isEmpty
-        ? countriesVM.countries
-        : countriesVM.countries.filter { country in
-            guard let countryName = country.name?.official else {
-                return false
-            }
-            return countryName.localizedCaseInsensitiveContains(searchText)
+        ? countries
+        : countries.filter { $0.name.localizedCaseInsensitiveContains(searchText)
         }
     }
     
@@ -34,53 +36,38 @@ struct CountriesListView: View {
             } else {
                 List(filteredItems, id: \.self) { country in
                     NavigationLink {
-                        CountryDetailView(country: country)
+                        CountryDetailView(country: country, countriesVM: $countriesVM)
                     } label: {
                         CellView(
-                            name: country.name?.official ?? "",
-                            region: country.region ?? "",
-                            flagImageName: country.flags?.png ?? ""
+                            name: country.name,
+                            region: country.region,
+                            flagImageName: country.flag
                         )
                     }
-
                 }
                 .searchable(text: $searchText, prompt: "Search country")
-            }
-        }
-        .task {
-            await countriesVM.fetchCountries()
-        }
-    }
-}
-
-fileprivate struct CellView: View {
-    let name: String
-    let region: String
-    let flagImageName: String
-    
-    @Environment(\.screenSize) private var screenSize
-    
-    var body: some View {
-        HStack(spacing: 20) {
-            Text(name)
-            Spacer()
-            VStack(alignment: .trailing) {
-                KFImage(URL(string: flagImageName))
-                    .placeholder {
-                        ProgressView()
+                .toolbar {
+                    ToolbarItem(placement: .topBarTrailing) {
+                        NavigationLink(destination: CountriesListFavoritesView(countriesVM: $countriesVM)) {
+                            Image(systemName: "star")
+                        }
                     }
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: screenSize.width * 0.1)
-                Text(region)
-                    .multilineTextAlignment(.trailing)
+                }
+            }
+        }
+        .navigationTitle("All countries")
+        .onAppear {
+            countriesVM.modelContext = modelContext
+            if isFirstLaunch {
+                Task {
+                    await countriesVM.fetchCountries()
+                }
+                isFirstLaunch = false
+            } else {
+                countriesVM.isLoading = false 
             }
         }
     }
 }
 
-#Preview {
-    NavigationStack {
-            CountriesListView()
-    }
-}
+
